@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup and support for Sunflower Home Control for iPhone.">
+  <title>Sunflower Home Control Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="eyebrow">iPhone app</p>
+    <h1>Sunflower Home Control</h1>
+    <p>Control compatible home lights and sprinklers on your local network.</p>
+    <nav aria-label="Main"><a href="./" aria-current="page">Support</a><a href="privacy.html">Privacy policy</a></nav>
+  </header>
+  <main>
+    <section>
+      <h2>Before you connect</h2>
+      <p>Requires iOS 17 or later and a compatible ESP32 controller running the
+        Sunflower Home Control phone API on TCP port 3333. This is not a universal
+        controller for all ESP32 devices or commercial smart-home products.
+        No HomeKit hub or cloud account is required.</p>
+      <p>Use a trusted home Wi-Fi network. The app's controller protocol is not
+        encrypted or authenticated. Never expose port 3333 to the internet.</p>
+    </section>
+    <section>
+      <h2>Get started</h2>
+      <ol>
+        <li>Connect your iPhone and compatible controller to the same home network.</li>
+        <li>Allow Local Network access when iOS asks. You can change this permission
+          in Settings &gt; Privacy &amp; Security &gt; Local Network.</li>
+        <li>Open the app's gear-shaped Settings button. Enter your controller's hostname
+          or numeric IP address, not a URL. Disconnect before editing the address.</li>
+        <li>Return to the main page and tap Connect.</li>
+      </ol>
+      <p>Without hardware, tap <strong>Try Demo</strong>. All demo data and commands
+        are simulated; no real equipment is operated.</p>
+    </section>
+    <section>
+      <h2>Using the controls</h2>
+      <ul>
+        <li>Tap a station tile to toggle it. Turning ON defaults to 60 minutes for
+          lights and 10 minutes for sprinklers. Turning OFF overrides the schedule
+          until canceled or midnight.</li>
+        <li>Touch and hold a tile for detailed override settings. Durations change
+          in five-minute steps. VoiceOver also provides an Override Settings action.</li>
+        <li>ON tiles display a minutes:seconds countdown based on the controller's
+          reported cutoff time. Unknown cutoff times display --:--.</li>
+        <li>Stop Water holds sprinklers until resumed or midnight. It does not stop lights.</li>
+        <li>Cancel Overrides restores station schedules after confirmation and leaves
+          Stop Water unchanged. Scheduled stations may turn on immediately.</li>
+      </ul>
+      <p>Overrides continue on the controller if the app closes. Reconnect to see
+        current state. Controller restarts clear its in-memory overrides.
+        ON means the last successfully commanded relay state, not independent
+        physical feedback. Only operate equipment when it is safe.</p>
+    </section>
+    <section>
+      <h2>Connection troubleshooting</h2>
+      <ul>
+        <li>Check power, Wi-Fi, the controller address, and Local Network permission.</li>
+        <li>Guest Wi-Fi isolation, VPNs, or router client isolation can block access.</li>
+        <li>Try the controller's numeric IP address if its hostname does not resolve.</li>
+        <li>The app disconnects when it enters the background. Reconnect on return.</li>
+        <li>If a command times out, it may have executed. Reconnect and review state
+          before issuing another command.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact support</h2>
+      <p><a href="https://github.com/tap22sf/sunflower-home-control-support/issues/new">Open a support request</a>
+        or <a href="https://github.com/tap22sf/sunflower-home-control-support/issues">view existing requests</a>.
+        Posting requires a GitHub account.</p>
+      <p>Requests are public. Include the app version, iOS version, what happened,
+        and steps to reproduce it. Do not post passwords, network addresses,
+        device identifiers, or other personal information.</p>
+    </section>
+  </main>
+  <footer><a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>
